@@ -43,9 +43,35 @@ object SampleRepositoryData {
             users[2],
             LocalDate.of(2022, 5, 14),
             "I cant find the gas tank on my Tesla.",
-            R.drawable.tesla_gas,
+            listOf(R.drawable.tesla_gas),
             3, 18, 588
 
+        ),
+        Tweet(
+            users[0],
+            LocalDate.of(2022, 5, 16),
+            "My kids, C3PO and R2D2 are having fun",
+            listOf(R.drawable.tesla_kids),
+            3, 3, 57
+
+        ),
+        Tweet(
+            users[0],
+            LocalDate.of(2022, 5, 17),
+            "What car do you like the most",
+            listOf(R.drawable.car1,R.drawable.car2,R.drawable.car3,R.drawable.car4)
+        ),
+        Tweet(
+            users[0],
+            LocalDate.of(2022, 5, 17),
+            "Only three in this round",
+            listOf(R.drawable.car1,R.drawable.car2,R.drawable.car3)
+        ),
+        Tweet(
+            users[0],
+            LocalDate.of(2022, 5, 17),
+            "These are the two finalists",
+            listOf(R.drawable.car1,R.drawable.car2)
         ),
     )
 

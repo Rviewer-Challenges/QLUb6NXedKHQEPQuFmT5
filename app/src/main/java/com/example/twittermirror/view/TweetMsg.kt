@@ -19,8 +19,15 @@ import androidx.compose.ui.unit.dp
 import com.example.twittermirror.model.Tweet
 
 @Composable
-fun TweetMsg(tweet: Tweet, modifier: Modifier = Modifier) {
-    Surface() {
+fun TweetMsg(
+    tweet: Tweet,
+    modifier: Modifier = Modifier,
+    onReply: () -> Unit = {},
+    onRetweet: () -> Unit = {},
+    onLike: () -> Unit = {},
+    onShare: () -> Unit = {}
+) {
+    Surface {
         Row(
             modifier
                 .padding(8.dp)
@@ -58,7 +65,7 @@ fun TweetMsg(tweet: Tweet, modifier: Modifier = Modifier) {
                 if (tweet.picture.isNotEmpty()) {
                     ImageGroup(tweet.picture, Modifier.padding(top = 8.dp))
                 }
-                BottomIconBar(tweet)
+                BottomIconBar(tweet, Modifier, onReply, onRetweet, onLike, onShare)
             }
 
 

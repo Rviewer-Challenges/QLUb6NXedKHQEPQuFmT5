@@ -28,16 +28,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
-    val viewModel : MainViewModel = viewModel()
+    val viewModel: MainViewModel = viewModel()
     LazyColumn(modifier = modifier) {
-        items(viewModel.tweets) { tweet -> TweetMsg(tweet) }
+        items(viewModel.tweets) { tweet ->
+            TweetMsg(
+                tweet,
+                onLike = { viewModel.onLike(tweet) },
+                onRetweet = { viewModel.onRetweet(tweet) })
+        }
     }
 
 }
-
-
-
-
 
 
 @Preview(name = "Light Mode", showBackground = true)

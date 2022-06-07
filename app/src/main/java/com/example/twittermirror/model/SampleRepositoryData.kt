@@ -44,7 +44,10 @@ object SampleRepositoryData {
             LocalDate.of(2022, 5, 14),
             "I cant find the gas tank on my Tesla.",
             listOf(R.drawable.tesla_gas),
-            3, 18, 588
+            3,
+            18,
+            likes= 588,
+            initialLiked = true
 
         ),
         Tweet(
@@ -52,7 +55,7 @@ object SampleRepositoryData {
             LocalDate.of(2022, 5, 16),
             "My kids, C3PO and R2D2 are having fun",
             listOf(R.drawable.tesla_kids),
-            3, 3, 57
+            3, 3, true,57
 
         ),
         Tweet(

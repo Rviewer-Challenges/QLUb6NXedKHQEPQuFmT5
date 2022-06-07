@@ -3,6 +3,7 @@ package com.example.twittermirror.view
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,8 +25,8 @@ fun BottomIconBar(
         modifier = modifier.fillMaxWidth()
     ) {
         TweetIcon(IconType.Reply, onReply, number = tweet.replies)
-        TweetIcon(IconType.Retweet, onRetweet, number = tweet.retweets)
-        TweetIcon(IconType.Like, onLike, number = tweet.likes)
+        TweetIcon(IconType.Retweet, onRetweet, number = tweet.retweets, state = tweet.retweeted)
+        TweetIcon(IconType.Like, onLike, number = tweet.likes, state = tweet.liked)
         TweetIcon(IconType.Share, onShare)
     }
 }
@@ -35,8 +36,10 @@ fun TweetIcon(
     iconType: IconType,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    number: Int = 0
+    number: Int = 0,
+    state: Boolean = false
 ) {
+    val color = if (state && iconType.color != null) iconType.color else LocalContentColor.current
 
     // IconButton width is set to a fix value because otherwise the text do not fit
     IconButton(onClick, modifier.width(70.dp)) {
@@ -49,7 +52,8 @@ fun TweetIcon(
                 contentDescription = iconType.contentDescription,
                 Modifier
                     .align(Alignment.CenterVertically)
-                    .padding(end = 6.dp)
+                    .padding(end = 6.dp),
+                tint = color
             )
             if (number > 0) {
                 Text(

@@ -1,5 +1,17 @@
 # Twitter Mirroring
 
+App developed for the [Rviewer](https://rviewer.io) Challenge from MoureDev.
+
+## Apk
+
+Apk file can be downloaded from here [twitter-mirror.apk](twitter-mirror.apk)
+
+## Screenshot
+
+![Twitter Mirror App](screenshot_1.png)
+
+---
+
 Who doesn't have a Twitter account? One of the biggest and controversial social networks of this decade, which has
 been revamped multiple times due to its UX problems.
 
